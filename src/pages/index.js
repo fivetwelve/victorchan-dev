@@ -1,135 +1,205 @@
-import * as React from "react"
+import * as React from 'react';
 
 // styles
 const pageStyles = {
-  color: "#232129",
+  color: '#232129',
   padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+  fontFamily: '-apple-system, Roboto, sans-serif, serif',
+};
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
   maxWidth: 320,
-}
+};
 const headingAccentStyles = {
-  color: "#663399",
-}
+  color: '#663399',
+};
 const paragraphStyles = {
   marginBottom: 48,
-}
+};
 const codeStyles = {
-  color: "#8A6534",
+  color: '#8A6534',
   padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
+  backgroundColor: '#FFF4DB',
+  fontSize: '1.25rem',
   borderRadius: 4,
-}
+};
 const listStyles = {
   marginBottom: 96,
   paddingLeft: 0,
-}
+};
 const listItemStyles = {
   fontWeight: 300,
   fontSize: 24,
   maxWidth: 560,
   marginBottom: 30,
-}
+};
 
 const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
+  color: '#8954A8',
+  fontWeight: 'bold',
   fontSize: 16,
-  verticalAlign: "5%",
-}
+  verticalAlign: '5%',
+};
 
 const docLinkStyle = {
   ...linkStyle,
-  listStyleType: "none",
+  listStyleType: 'none',
   marginBottom: 24,
-}
+};
 
 const descriptionStyle = {
-  color: "#232129",
+  color: '#232129',
   fontSize: 14,
   marginTop: 10,
   marginBottom: 0,
   lineHeight: 1.25,
-}
+};
 
 const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
+  text: 'Documentation',
+  url: 'https://www.gatsbyjs.com/docs/',
+  color: '#8954A8',
+};
 
 const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
+  color: '#fff',
+  backgroundColor: '#088413',
+  border: '1px solid #088413',
   fontSize: 11,
-  fontWeight: "bold",
+  fontWeight: 'bold',
   letterSpacing: 1,
   borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
+  padding: '4px 6px',
+  display: 'inline-block',
+  position: 'relative',
   top: -2,
   marginLeft: 10,
   lineHeight: 1,
-}
+};
 
 // data
 const links = [
   {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
+    text: 'Tutorial',
+    url: 'https://www.gatsbyjs.com/docs/tutorial/',
     description:
       "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
+    color: '#E95800',
   },
   {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
+    text: 'How to Guides',
+    url: 'https://www.gatsbyjs.com/docs/how-to/',
     description:
       "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
+    color: '#1099A8',
   },
   {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
+    text: 'Reference Guides',
+    url: 'https://www.gatsbyjs.com/docs/reference/',
     description:
       "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
+    color: '#BC027F',
   },
   {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
+    text: 'Conceptual Guides',
+    url: 'https://www.gatsbyjs.com/docs/conceptual/',
     description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
+      'Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.',
+    color: '#0D96F2',
   },
   {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
+    text: 'Plugin Library',
+    url: 'https://www.gatsbyjs.com/plugins',
     description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
+      'Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.',
+    color: '#8EB814',
   },
   {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
+    text: 'Build and Host',
+    url: 'https://www.gatsbyjs.com/cloud',
     badge: true,
     description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
+      'Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!',
+    color: '#663399',
   },
-]
+];
 
 // markup
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
       <title>Home Page</title>
+      <div class="chat-notification rounded-b-lg shadow-md p:10">
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      </div>
+      <div className="bg-deep-purple-accent-700">
+        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+          <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
+            <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
+              <a href="/" className="mb-6 sm:mx-auto">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-teal-accent-400">
+                  <svg
+                    className="w-10 h-10 text-deep-purple-900"
+                    stroke="currentColor"
+                    viewBox="0 0 52 52"
+                  >
+                    <polygon
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      fill="none"
+                      points="29 13 14 29 25 29 23 39 38 23 27 23"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+                <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto">
+                  <span className="relative inline-block">
+                    <svg
+                      viewBox="0 0 52 24"
+                      fill="currentColor"
+                      className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-deep-purple-accent-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                    >
+                      <defs>
+                        <pattern
+                          id="700c93bf-0068-4e32-aafe-ef5b6a647708"
+                          x="0"
+                          y="0"
+                          width=".135"
+                          height=".30"
+                        >
+                          <circle cx="1" cy="1" r=".7" />
+                        </pattern>
+                      </defs>
+                      <rect
+                        fill="url(#700c93bf-0068-4e32-aafe-ef5b6a647708)"
+                        width="52"
+                        height="24"
+                      />
+                    </svg>
+                    <span className="relative">The</span>
+                  </span>{' '}
+                  quick, brown fox jumps over a lazy dog
+                </h2>
+                <p className="text-base text-indigo-100 md:text-lg">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque rem aperiam, eaque ipsa quae.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="/"
+                  className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-deep-purple-accent-100 focus:shadow-outline focus:outline-none"
+                >
+                  Get started
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <h1 style={headingStyles}>
         Congratulations
         <br />
@@ -140,7 +210,7 @@ const IndexPage = () => {
       </h1>
       <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
+        update in real-time.{' '}
         <span role="img" aria-label="Sunglasses smiley emoji">
           😎
         </span>
@@ -154,7 +224,7 @@ const IndexPage = () => {
             {docLink.text}
           </a>
         </li>
-        {links.map(link => (
+        {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
             <span>
               <a
@@ -178,7 +248,7 @@ const IndexPage = () => {
         src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
       />
     </main>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
