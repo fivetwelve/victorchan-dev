@@ -1,252 +1,243 @@
 import * as React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faChartNetwork,
+  faCodeBranch,
+  faDatabase,
+  faEnvelope,
+  faFrame,
+  faList,
+  faMagnifyingGlass,
+  faPlay,
+  faUsers,
+} from '@fortawesome/pro-light-svg-icons';
+import tape1 from '../images/tape-1.png';
+import tape2 from '../images/tape-2.png';
+import tape3 from '../images/tape-3.png';
 
 // styles
-const pageStyles = {
-  color: '#232129',
-  padding: 96,
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-const headingAccentStyles = {
-  color: '#663399',
-};
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: '#8A6534',
-  padding: 4,
-  backgroundColor: '#FFF4DB',
-  fontSize: '1.25rem',
-  borderRadius: 4,
-};
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-};
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-};
-
-const linkStyle = {
-  color: '#8954A8',
-  fontWeight: 'bold',
-  fontSize: 16,
-  verticalAlign: '5%',
-};
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: 'none',
-  marginBottom: 24,
-};
-
-const descriptionStyle = {
-  color: '#232129',
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-};
-
-const docLink = {
-  text: 'Documentation',
-  url: 'https://www.gatsbyjs.com/docs/',
-  color: '#8954A8',
-};
-
-const badgeStyle = {
-  color: '#fff',
-  backgroundColor: '#088413',
-  border: '1px solid #088413',
-  fontSize: 11,
-  fontWeight: 'bold',
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: '4px 6px',
-  display: 'inline-block',
-  position: 'relative',
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
+const headlineStyle =
+  'font-headline text-2xl md:text-3xl text-slate-800 bg-amber-400 inline pr-1 pb-1 md:pr-2 md:pb-1.5';
+const paragraphStyle = 'text-slate-600 text-xl mb-5';
+const linkStyle =
+  'bg-amber-400 no-underline bg-opacity-50 hover:bg-opacity-100';
+const dropShadowStyle = {
+  boxShadow: '1px 2px 6px 2px rgb(0 0 0 / 10%)',
 };
 
 // data
-const links = [
+const stack = [
+  { text: 'Gatsby', url: 'https://www.gatsbyjs.com/', icon: faFrame },
+  { text: 'GraphCMS', url: 'https://graphcms.com/', icon: faDatabase },
+  { text: 'Netlify', url: 'https://www.netlify.com/', icon: faChartNetwork },
   {
-    text: 'Tutorial',
-    url: 'https://www.gatsbyjs.com/docs/tutorial/',
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: '#E95800',
+    text: 'Algolia',
+    url: 'https://www.algolia.com/',
+    icon: faMagnifyingGlass,
   },
+  { text: 'Mailjet', url: 'https://www.mailjet.com/', icon: faEnvelope },
+  { text: 'Airtable', url: 'https://www.airtable.com/', icon: faList },
+  { text: 'Auth0', url: 'https://auth0.com/', icon: faUsers },
   {
-    text: 'How to Guides',
-    url: 'https://www.gatsbyjs.com/docs/how-to/',
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: '#1099A8',
+    text: 'Bitbucket',
+    url: 'https://bitbucket.org/product/',
+    icon: faCodeBranch,
   },
-  {
-    text: 'Reference Guides',
-    url: 'https://www.gatsbyjs.com/docs/reference/',
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: '#BC027F',
-  },
-  {
-    text: 'Conceptual Guides',
-    url: 'https://www.gatsbyjs.com/docs/conceptual/',
-    description:
-      'Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.',
-    color: '#0D96F2',
-  },
-  {
-    text: 'Plugin Library',
-    url: 'https://www.gatsbyjs.com/plugins',
-    description:
-      'Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.',
-    color: '#8EB814',
-  },
-  {
-    text: 'Build and Host',
-    url: 'https://www.gatsbyjs.com/cloud',
-    badge: true,
-    description:
-      'Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!',
-    color: '#663399',
-  },
+  { text: 'Slack', url: 'https://slack.com/', icon: faPlay },
 ];
 
 // markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <div class="chat-notification rounded-b-lg shadow-md p:10">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <main className="py-24 px-5 md:px-24 font-serif">
+      {/* <title>Home Page</title> */}
+
+      <div className="w-full mb-8">
+        <h2 className="text-3xl md:text-4xl">Recent Work</h2>
       </div>
-      <div className="bg-deep-purple-accent-700">
-        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-          <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
-            <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
-              <a href="/" className="mb-6 sm:mx-auto">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-teal-accent-400">
-                  <svg
-                    className="w-10 h-10 text-deep-purple-900"
-                    stroke="currentColor"
-                    viewBox="0 0 52 52"
-                  >
-                    <polygon
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill="none"
-                      points="29 13 14 29 25 29 23 39 38 23 27 23"
-                    />
-                  </svg>
-                </div>
-              </a>
-              <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-                <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto">
-                  <span className="relative inline-block">
-                    <svg
-                      viewBox="0 0 52 24"
-                      fill="currentColor"
-                      className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-deep-purple-accent-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
-                    >
-                      <defs>
-                        <pattern
-                          id="700c93bf-0068-4e32-aafe-ef5b6a647708"
-                          x="0"
-                          y="0"
-                          width=".135"
-                          height=".30"
-                        >
-                          <circle cx="1" cy="1" r=".7" />
-                        </pattern>
-                      </defs>
-                      <rect
-                        fill="url(#700c93bf-0068-4e32-aafe-ef5b6a647708)"
-                        width="52"
-                        height="24"
-                      />
-                    </svg>
-                    <span className="relative">The</span>
-                  </span>{' '}
-                  quick, brown fox jumps over a lazy dog
-                </h2>
-                <p className="text-base text-indigo-100 md:text-lg">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque rem aperiam, eaque ipsa quae.
-                </p>
-              </div>
-              <div>
-                <a
-                  href="/"
-                  className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-deep-purple-accent-100 focus:shadow-outline focus:outline-none"
-                >
-                  Get started
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{' '}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map((link) => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
+      <div className="prose max-w-full xl:w-2/3 xl:float-left">
+        {/* <h2 className="text-3xl md:text-4xl">Recent Work</h2> */}
+        {/* Mission brief starts */}
+        <div
+          className="bg-white rounded py-8 px-4 md:px-8 mb-10 rotate-0.5"
+          style={dropShadowStyle}
+        >
+          <div className="relative -mt-3">
+            <span className="absolute w-full -top-12">
+              <img src={tape1} role="img" alt="" className="my-0 mx-auto" />
             </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
+          </div>
+          <div className="mt-3">
+            <h2 className={headlineStyle}>Briefing</h2>
+          </div>
+          <h3 className="underline text-xl">Client</h3>
+          <p className={paragraphStyle}>
+            <a
+              href="https://www.almex.com/"
+              target="_blank"
+              rel="noreferrer"
+              className={linkStyle}
+            >
+              Almex Group
+            </a>
+          </p>
+          <h3 className="underline text-xl">Objective</h3>
+          <p className={paragraphStyle}>
+            Build the client a new website! That required putting together a
+            complete tech stack that encompassed content management, deployment,
+            search and form submissions at the minimum. It also needed to
+            support multiple languages, multiple regions, and a couple of
+            hundred products that needed to follow a defined category hierarchy.
+          </p>
+          <p className={paragraphStyle}>
+            Additional supporting sites were built; one to allow customers to
+            login and view their loyalty points while another to manage said
+            customer accounts.
+          </p>
+        </div>
+        {/* Mission brief ends */}
+
+        {/* Approach starts */}
+        <div
+          className="bg-white rounded py-8 px-4 md:px-8 mb-10 rotate-0.5"
+          style={dropShadowStyle}
+        >
+          <div className="relative -mt-3">
+            <span className="absolute w-full -top-12">
+              <img src={tape2} role="img" alt="" className="my-0 mx-auto" />
+            </span>
+          </div>
+          <div className="mt-3">
+            <h2 className={headlineStyle}>Strategy</h2>
+          </div>
+          <h3 className="underline text-xl">Challenges</h3>
+          <p className={paragraphStyle}>
+            At the time, the website employed Textpattern&mdash;a somewhat
+            obsolete PHP-based CMS&mdash;atop of a deprecated version of PHP,
+            and had been poorly maintained. The site design was not responsive
+            and the content management was not easily scalable from its existing
+            dozens of products to an anticipation of hundreds. Multilingual
+            support was very rudimentary and attempts to upgrade everything
+            brought errors and would have necessitated a lot of PHP expertise
+            which is outside my wheelhouse. The site was also running off a
+            shared virtual server which I suspected would not scale too well
+            with additional traffic nor international visitors.
+          </p>
+          <h3 className="underline text-xl">Solution</h3>
+          <p className={paragraphStyle}>
+            I wanted their site to take advantage of cloud resources and make
+            their (currently non-existant) devops a lot friendlier and easier to
+            manage by relying on PaaS (if I am categorizing the services
+            correctly) as well as being able handle long-term growth and traffic
+            by way of deploying to a CDN.
+          </p>
+          <p className={paragraphStyle}>
+            I proposed a{' '}
+            <a
+              href="https://jamstack.org/what-is-jamstack/"
+              target="_blank"
+              rel="noreferrer"
+              className={linkStyle}
+            >
+              Jamstack
+            </a>{' '}
+            approach and provided estimates of monthly operating costs to the
+            client who gave their blessing to proceed and begin anew.
+          </p>
+          <p className={paragraphStyle}>
+            The site framework used Gatsby in order to make most of the site
+            statically rendered and therefore quick to load and render. It was
+            deployed on Netlify's CDN using their CI pipeline with the project's
+            Git repository. The website data and content were set up in GraphCMS
+            and mapped into the front-end components and templates GraphQL.
+            Algolia was integrated to provide Search functionality. In addition,
+            a couple of server-side utilities were needed for form submission
+            and product synchronization with Algolia so they were created using
+            Netlify's Amazon Lambda implementation. Last but not least, taking
+            advantage of Slack's webhooks allowed us to trigger builds (dev or
+            production) with keywords in our team chat, avoiding the need for
+            any admin dashboards or devops knowledge for the folks needing site
+            rebuilds.
+          </p>
+          <p className={paragraphStyle}>
+            The loyalty site was built with a similar architecture but at a much
+            smaller scale. Airtable and some REST APIs were used to manage
+            membership data and Auth0 was integrated to manage sign-ups and
+            authentication.
+          </p>
+          <p className={paragraphStyle}>
+            The project was not without its challenges. It did survive breaking
+            changes from major updates of both Gatsby and GraphCMS and there is
+            a constant challenge and desire to reduce build times. Nonetheless,
+            the interconnectedness of all the services and components is
+            testament to how far web production has come to enabling small
+            teams&mdash;or even one person&mdash;to accomplish so much on their
+            own.
+          </p>
+          <h3 className="underline text-xl">Tech Stack</h3>
+          <dl className="mt-6" style={{ columns: '2 auto' }}>
+            {stack.map((element, idx) => (
+              <dd key={`stack-${idx}`} className="flex mb-1.5">
+                <span className="block w-9">
+                  <FontAwesomeIcon
+                    icon={element.icon}
+                    size="xl"
+                    className="fa-pull-left"
+                  />
+                </span>
+                <a
+                  href={element.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={linkStyle}
+                >
+                  {element.text}
+                </a>
+              </dd>
+            ))}
+          </dl>
+        </div>
+        {/* Approach ends */}
+      </div>
+
+      <aside className="prose w-full max-w-full lg:w-1/3 xl:float-right xl:pl-2">
+        <div
+          className="bg-white rounded py-8 px-4 w-full md:px-8 mb-10 rotate-0.5 xl:ml-3"
+          style={dropShadowStyle}
+        >
+          <div className="relative -mt-3">
+            <span className="absolute w-full -top-12">
+              <img src={tape3} role="img" alt="" className="my-0 mx-auto" />
+            </span>
+          </div>
+          <div className="mt-3">
+            <h2 className={headlineStyle}>Gallery</h2>
+          </div>
+          <h3 className="underline text-xl">Client</h3>
+          <p className={paragraphStyle}>
+            <a
+              href="https://www.almex.com/"
+              target="_blank"
+              rel="noreferrer"
+              className={linkStyle}
+            >
+              Almex Group
+            </a>
+          </p>
+        </div>
+
+        {/* <div className="relative -mt-3">
+            <span className="absolute w-full -top-12">
+              <img src={tape3} role="img" alt="" className="my-0 mx-auto" />
+            </span>
+          </div>
+          <div className="mt-3">
+            <h2 className={headlineStyle}>Gallery</h2>
+          </div>
+          <h3 className="underline text-xl">Client</h3>
+          <p className={paragraphStyle}>Plenty of stuff</p>
+        </div> */}
+      </aside>
     </main>
   );
 };
