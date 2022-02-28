@@ -20,7 +20,7 @@ const headlineStyle =
   'font-headline text-2xl md:text-3xl text-slate-800 bg-amber-400 inline pr-1 pb-1 md:pr-2 md:pb-1.5';
 const paragraphStyle = 'text-slate-600 text-xl mb-5';
 const linkStyle =
-  'bg-amber-400 no-underline bg-opacity-50 hover:bg-opacity-100';
+  'bg-amber-400 bg-opacity-50 inline-block relative no-underline';
 const dropShadowStyle = {
   boxShadow: '1px 2px 6px 2px rgb(0 0 0 / 10%)',
 };
@@ -76,7 +76,7 @@ const IndexPage = () => {
               href="https://www.almex.com/"
               target="_blank"
               rel="noreferrer"
-              className={linkStyle}
+              className={`text ${linkStyle}`}
             >
               Almex Group
             </a>
@@ -137,7 +137,7 @@ const IndexPage = () => {
               href="https://jamstack.org/what-is-jamstack/"
               target="_blank"
               rel="noreferrer"
-              className={linkStyle}
+              className={`text ${linkStyle}`}
             >
               Jamstack
             </a>{' '}
@@ -178,7 +178,7 @@ const IndexPage = () => {
           <dl className="mt-6" style={{ columns: '2 auto' }}>
             {stack.map((element, idx) => (
               <dd key={`stack-${idx}`} className="flex mb-1.5">
-                <span className="block w-9">
+                <span className="flex justify-center w-9">
                   <FontAwesomeIcon
                     icon={element.icon}
                     size="xl"
@@ -189,7 +189,7 @@ const IndexPage = () => {
                   href={element.url}
                   target="_blank"
                   rel="noreferrer"
-                  className={linkStyle}
+                  className={`text ${linkStyle}`}
                 >
                   {element.text}
                 </a>
@@ -219,7 +219,7 @@ const IndexPage = () => {
               href="https://www.almex.com/"
               target="_blank"
               rel="noreferrer"
-              className={linkStyle}
+              className={`text ${linkStyle}`}
             >
               Almex Group
             </a>
