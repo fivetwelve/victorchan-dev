@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.SRLCaptionContainer {
+  font-size: 24px;
+}
+
+$primaryColor: #ffbb24;
+$secondaryColor: #fde68a;
+$tertiaryColor: rgba(104, 103, 103, 0.3);
+
 body {
   background-color: #e4e4e7;
   /* Hideout pattern from https://heropatterns.com/ */
@@ -28,35 +36,82 @@ a.text::before {
   transition-timing-function: ease-in-out;
 }
 
-a.text:focus::before,
+a.text:active::before,
 a.text:hover::before {
   transform: scaleX(1);
-  background: #ffbb24;
+  background: $primaryColor;
+}
+
+.gatsby-image-wrapper {
+  outline: 3px solid $tertiaryColor;
+  transition: 0.3s ease-out;
+  transition-property: border-radius, outline-color;
+  &:active,
+  &:hover {
+    border-radius: 20px;
+    outline-color: $primaryColor;
+  }
 }
 
 /* customization for lightbox */
 #SRLLightbox {
-  background-color: rgba(30, 30, 30, 0.85);
+  @apply font-serif;
 }
 .SRLThumbnailsContainer a:not(:first-of-type) {
   margin-left: 10px;
 }
 .SRLThumbnailsContainer a {
   margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 0px;
+  transition: 0.3s ease-out all;
+  transition-property: border-radius opacity outline;
+  outline: 3px solid rgba(0, 0, 0, 0.1);
+
+  &:active,
+  &:hover {
+    border-radius: 8px;
+    opacity: 1;
+    outline: 3px solid $primaryColor;
+  }
+}
+
+.SRLThumbnailsContainer a.SRLThumbnailSelected {
+  &:active,
+  &:hover {
+    border-radius: 0;
+    outline: 5px solid rgba(0, 0, 0, 0.1);
+  }
+}
+button.SRLCloseButton {
+  background-color: $secondaryColor;
+  border-radius: 0px;
+  transition: 0.3s ease-out all;
+  transition-property: background-color border-radius;
+  &:active,
+  &:hover {
+    background-color: $primaryColor;
+    border-radius: 20px;
+  }
 }
 button.SRLPrevButton,
 button.SRLNextButton {
-  background-color: #ffbb24;
-  border-radius: 20px;
-  /* outline: 1px solid rgb(253 230 138); */
+  background-color: $secondaryColor;
+  border-radius: 0px;
+  transition: 0.3s ease-out all;
+  transition-property: background-color border-radius;
+  &:active,
+  &:hover {
+    background-color: $primaryColor;
+    border-radius: 20px;
+  }
+  svg {
+    // filter: invert(1);
+  }
 }
 button.SRLPrevButton {
   margin-left: 20px;
 }
 button.SRLNextButton {
   margin-right: 20px;
-}
-
-button.SRLPrevButton svg {
-  filter: invert(1);
 }

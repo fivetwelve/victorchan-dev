@@ -4,3 +4,4 @@ public
 yarn-error.log
 .DS_Store
 .env*
+package-lock.json
