@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChartNetwork,
@@ -12,22 +13,50 @@ import {
   faUsers,
 } from '@fortawesome/pro-light-svg-icons';
 import SimpleReactLightbox from 'simple-react-lightbox';
-import RecentGallery from '../components/recentGallery';
+import { SRLWrapper } from 'simple-react-lightbox';
+import Nav from '../components/nav';
+
+// import ImageGallery from '../components/imageGallery';
 import tape1 from '../images/tape-1.png';
 import tape2 from '../images/tape-2.png';
 import tape3 from '../images/tape-3.png';
+import almex01 from '../images/screenshots/almex-01.jpg';
+import almex02 from '../images/screenshots/almex-02.jpg';
+import almex03 from '../images/screenshots/almex-03.jpg';
+import almex04 from '../images/screenshots/almex-04.jpg';
+import almex05 from '../images/screenshots/almex-05.jpg';
+import almex06 from '../images/screenshots/almex-06.jpg';
 
 // styles
 const headlineStyle =
   'font-headline text-2xl md:text-3xl text-slate-800 bg-amber-400 inline pr-1 pb-1 md:pr-2 md:pb-1.5';
 const paragraphStyle = 'text-slate-600 text-xl mb-5';
-const linkStyle = 'bg-amber-200 inline-block relative no-underline';
+const linkStyle = 'bg-amber-200 inline-block relative no-underline px-0.5';
 const dropShadowStyle = {
   boxShadow: '1px 2px 6px 2px rgb(0 0 0 / 10%)',
 };
+const h1DropShadowStyle = {
+  boxShadow: '1px 1px 3px 1px rgb(0 0 0 / 10%)',
+};
+const lightboxOptions = {
+  buttons: {
+    showAutoplayButton: false,
+    showDownloadButton: false,
+    showFullscreenButton: false,
+    showThumbnailsButton: false,
+    iconColor: 'rgba(0, 0, 0, 1)',
+  },
+  caption: {
+    captionContainerPadding: '20px 0',
+  },
+  settings: {
+    autoplaySpeed: 0,
+    overlayColor: 'rgba(30, 30, 30, 0.85)',
+  },
+};
 
 // data
-const stack = [
+const stackData = [
   { text: 'Gatsby', url: 'https://www.gatsbyjs.com/', icon: faFrame },
   { text: 'GraphCMS', url: 'https://graphcms.com/', icon: faDatabase },
   { text: 'Netlify', url: 'https://www.netlify.com/', icon: faChartNetwork },
@@ -51,21 +80,28 @@ const stack = [
 const IndexPage = () => {
   return (
     <SimpleReactLightbox className="font-serif">
-      <main className="py-24 px-5 md:px-24 font-serif">
+      <main className="--body1 inline-block py-24 px-5 md:px-24 font-serif">
         {/* <title>Home Page</title> */}
 
+        <Nav currentPage="recent" />
+
         <div className="w-full mb-8">
-          <h1 className="text-3xl md:text-4xl">Recent Work</h1>
+          <h1
+            className="inline-flex px-4 py-2 -rotate-2 -translate-x-3 text-3xl md:text-4xl bg-white"
+            style={h1DropShadowStyle}
+          >
+            Recent Work
+          </h1>
         </div>
         <div className="prose max-w-full xl:w-2/3 xl:float-left">
           {/* Mission brief starts */}
           <div
-            className="bg-white rounded py-8 px-4 md:px-8 mb-10 rotate-0.5"
+            className="bg-white rounded py-8 px-4 md:px-8 mb-14 rotate-0.5"
             style={dropShadowStyle}
           >
             <div className="relative -mt-3">
               <span className="absolute w-full -top-12">
-                <img src={tape1} role="img" alt="" className="my-0 mx-auto" />
+                <img src={tape1} alt="" className="my-0 mx-auto" />
               </span>
             </div>
             <div className="mt-3">
@@ -101,12 +137,12 @@ const IndexPage = () => {
 
           {/* Approach starts */}
           <div
-            className="bg-white rounded py-8 px-4 md:px-8 mb-10 rotate-0.5"
+            className="bg-white rounded py-8 px-4 md:px-8 mb-14 rotate-0.5"
             style={dropShadowStyle}
           >
             <div className="relative -mt-3">
               <span className="absolute w-full -mt-12">
-                <img src={tape2} role="img" alt="" className="my-0 mx-auto" />
+                <img src={tape2} alt="" className="my-0 mx-auto" />
               </span>
             </div>
             <div className="mt-3">
@@ -182,7 +218,7 @@ const IndexPage = () => {
             </p>
             <h3 className="underline text-xl">Tech Stack</h3>
             <dl className="mt-6" style={{ columns: '2 auto' }}>
-              {stack.map((element, idx) => (
+              {stackData.map((element, idx) => (
                 <dd key={`stack-${idx}`} className="flex mb-1.5">
                   <span className="flex justify-center w-9">
                     <FontAwesomeIcon
@@ -209,17 +245,70 @@ const IndexPage = () => {
         {/* Gallery starts */}
         <aside className="prose w-full max-w-full xl:w-1/3 xl:float-right xl:pl-2">
           <div
-            className="bg-white rounded py-8 px-4 w-full md:px-8 mb-10 rotate-0.5 xl:ml-3"
+            className="bg-white rounded py-8 px-4 w-full md:px-8 mb-14 rotate-0.5 xl:ml-3"
             style={dropShadowStyle}
           >
             <div className="relative -mt-3">
               <span className="absolute w-full -top-12">
-                <img src={tape3} role="img" alt="" className="my-0 mx-auto" />
+                <img src={tape3} alt="" className="my-0 mx-auto" />
               </span>
             </div>
             <div className="mt-3">
               <h2 className={headlineStyle}>Gallery</h2>
-              <RecentGallery />
+              <SRLWrapper options={lightboxOptions}>
+                {/* <ul className="--gallery flex flex-wrap space-x-12 xl:space-x-4 xl:justify-between mt-10"> */}
+                <ul className="--gallery flex flex-wrap">
+                  <li className="p-3 overflow-hidden">
+                    <a href={almex01}>
+                      <StaticImage
+                        src="../images/screenshots/almex--thumb-01.jpg"
+                        alt="Almex Group's homepage."
+                      />
+                    </a>
+                  </li>
+                  <li className="p-3 overflow-hidden">
+                    <a href={almex02}>
+                      <StaticImage
+                        src="../images/screenshots/almex--thumb-02.jpg"
+                        alt="Almex Group product page."
+                      />
+                    </a>
+                  </li>
+                  <li className="p-3 overflow-hidden">
+                    <a href={almex03}>
+                      <StaticImage
+                        src="../images/screenshots/almex--thumb-03.jpg"
+                        alt="Page that filters documents and videos from all product
+                    pages."
+                      />
+                    </a>
+                  </li>
+                  <li className="p-3 overflow-hidden">
+                    <a href={almex04}>
+                      <StaticImage
+                        src="../images/screenshots/almex--thumb-04.jpg"
+                        alt="Historical timeline with details that show more in a modal."
+                      />
+                    </a>
+                  </li>
+                  <li className="p-3 overflow-hidden">
+                    <a href={almex05}>
+                      <StaticImage
+                        src="../images/screenshots/almex--thumb-05.jpg"
+                        alt="Global offices in Google Maps with detailed pins."
+                      />
+                    </a>
+                  </li>
+                  <li className="p-3 overflow-hidden">
+                    <a href={almex06}>
+                      <StaticImage
+                        src="../images/screenshots/almex--thumb-06.jpg"
+                        alt="Almex Group's Fusion Points loyalty website."
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </SRLWrapper>
             </div>
           </div>
         </aside>
