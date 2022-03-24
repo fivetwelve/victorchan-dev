@@ -1,7 +1,6 @@
 import * as React from 'react';
 import SimpleReactLightbox from 'simple-react-lightbox';
 import Nav from '../components/nav';
-import ImageGallery from '../components/imageGallery';
 
 import sea1 from '../images/sea-1.png';
 import sea2 from '../images/sea-2.png';
@@ -189,7 +188,6 @@ const PastWorkPage = () => {
             </div>
             <div className="mt-3">
               <h2 className={headlineStyle}>Gallery</h2>
-              {/* <ImageGallery /> */}
             </div>
           </div>
         </aside>

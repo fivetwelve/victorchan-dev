@@ -156,7 +156,7 @@ const AboutMePage = () => {
             perspectives and cultural sensitivities have been positive
             experiences.
           </p>
-          <h3 className="underline text-xl">Links</h3>
+          <h3 className="underline text-xl"></h3>
           <p></p>
         </div>
         {/* Background ends */}
