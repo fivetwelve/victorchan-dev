@@ -1,7 +1,8 @@
-node_modules/
 .cache/
-public
-yarn-error.log
 .DS_Store
 .env*
+node_modules/
+lambda
+public
 package-lock.json
+yarn-error.log

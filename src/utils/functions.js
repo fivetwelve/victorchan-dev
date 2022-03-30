@@ -1,3 +1,4 @@
+/* my utility for key generation, with less likelihood for name collision */
 const makeid = (length = 5) => {
   /* from https://stackoverflow.com/a/1349426 */
   let text = '';
