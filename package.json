@@ -12,7 +12,6 @@
     "develop": "gatsby develop",
     "start": "netlify dev",
     "build": "gatsby build",
-    "build:lambda": "netlify functions:build --src src/lambda",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
@@ -35,8 +34,6 @@
     "gatsby-plugin-sharp": "^4.7.0",
     "gatsby-source-filesystem": "^4.7.0",
     "gatsby-transformer-sharp": "^4.7.0",
-    "netlify-lambda": "^2.0.15",
-    "node-mailjet": "^3.3.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-google-recaptcha": "^2.1.0",
