@@ -28,6 +28,7 @@ import almex03 from '../images/screenshots/almex-03.jpg';
 import almex04 from '../images/screenshots/almex-04.jpg';
 import almex05 from '../images/screenshots/almex-05.jpg';
 import almex06 from '../images/screenshots/almex-06.jpg';
+import Footer from '../components/footer';
 
 // styles
 const headlineStyle =
@@ -81,14 +82,13 @@ const stackData = [
 // markup
 const IndexPage = () => {
   return (
-    <>
-      <Seo title="Home Page, Recent Work" />
-      <SimpleReactLightbox className="font-serif">
-        <main className="--body1 inline-block py-12 px-5 md:px-24 font-serif">
-          <Masthead />
-          <Nav currentPage="recent" />
-
-          <div className="w-full mb-8">
+    <div className="--body1 font-serif">
+      <Seo title="Home Page | Recent Work" />
+      <Masthead />
+      <Nav currentPage="recent" />
+      <SimpleReactLightbox>
+        <main className="inline-block pt-8 px-5 lg:px-24">
+          <div id="main" className="w-full mb-8">
             <h1
               className="inline-flex px-4 py-2 -rotate-2 -translate-x-3 text-3xl md:text-4xl bg-white"
               style={h1DropShadowStyle}
@@ -99,7 +99,7 @@ const IndexPage = () => {
           <div className="prose max-w-full xl:w-2/3 xl:float-left">
             {/* Mission brief starts */}
             <div
-              className="bg-white rounded py-8 px-4 md:px-8 mb-14 rotate-0.5"
+              className="bg-white rounded py-8 px-4 md:px-8 mb-16"
               style={dropShadowStyle}
             >
               <div className="relative -mt-3">
@@ -107,7 +107,7 @@ const IndexPage = () => {
                   <img src={tape1} alt="" className="my-0 mx-auto" />
                 </span>
               </div>
-              <div className="mt-3">
+              <div className="mt-3 mb-7">
                 <h2 className={headlineStyle}>Briefing</h2>
               </div>
               <h3 className="underline text-xl">Client</h3>
@@ -140,7 +140,7 @@ const IndexPage = () => {
 
             {/* Approach starts */}
             <div
-              className="bg-white rounded py-8 px-4 md:px-8 mb-14 rotate-0.5"
+              className="bg-white rounded py-8 px-4 md:px-8 mb-16"
               style={dropShadowStyle}
             >
               <div className="relative -mt-3">
@@ -148,7 +148,7 @@ const IndexPage = () => {
                   <img src={tape2} alt="" className="my-0 mx-auto" />
                 </span>
               </div>
-              <div className="mt-3">
+              <div className="mt-3 mb-7">
                 <h2 className={headlineStyle}>Strategy</h2>
               </div>
               <h3 className="underline text-xl">Challenges</h3>
@@ -184,12 +184,11 @@ const IndexPage = () => {
                   Jamstack
                 </a>{' '}
                 solution and provided estimates of monthly operating costs to
-                the client who gave their blessing to proceed and begin anew.
-                One advantage to using PaaS is being able to better judge costs
-                than estimating that associated with writing all the
-                functionality from scratch or with integrating an expensive
-                enterprise software that has very narrow platform requirements
-                and admin-level access.
+                the client who gave their blessing to proceed. One advantage to
+                using PaaS is being able to better judge costs than estimating
+                that associated with writing all the functionality from scratch
+                or with integrating an expensive enterprise software that has
+                very narrow platform requirements and admin-level access.
               </p>
               <p className={paragraphStyle}>
                 The site framework used Gatsby in order to make most of the site
@@ -251,7 +250,7 @@ const IndexPage = () => {
           {/* Gallery starts */}
           <aside className="prose w-full max-w-full xl:w-1/3 xl:float-right xl:pl-2">
             <div
-              className="bg-white rounded py-8 px-4 w-full md:px-8 mb-14 rotate-0.5 xl:ml-3"
+              className="bg-white rounded py-8 px-4 w-full md:px-8 mb-16 xl:ml-3"
               style={dropShadowStyle}
             >
               <div className="relative -mt-3">
@@ -259,7 +258,7 @@ const IndexPage = () => {
                   <img src={tape3} alt="" className="my-0 mx-auto" />
                 </span>
               </div>
-              <div className="mt-3">
+              <div className="mt-3 mb-7">
                 <h2 className={headlineStyle}>Gallery</h2>
                 <SRLWrapper options={lightboxOptions}>
                   {/* <ul className="--gallery flex flex-wrap space-x-12 xl:space-x-4 xl:justify-between mt-10"> */}
@@ -321,7 +320,8 @@ const IndexPage = () => {
           {/* Gallery ends */}
         </main>
       </SimpleReactLightbox>
-    </>
+      <Footer />
+    </div>
   );
 };
 

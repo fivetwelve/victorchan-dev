@@ -1,4 +1,7 @@
 [build]
   command = "yarn gatsby build"
-  functions = "lambda" #  netlify-lambda reads this
   publish = "public"
+
+
+[[plugins]]
+package = "@netlify/plugin-gatsby"

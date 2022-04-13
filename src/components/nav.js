@@ -10,8 +10,11 @@ const navDropShadowStyle = {
 };
 
 const Nav = ({ currentPage }) => {
-  // only Recent has an aside so align nav appropriately for the other pages
-  let navPosition = currentPage === 'recent' ? '' : 'xl:w-3/4';
+  // only Recent Work has an aside so align nav appropriately for the other pages
+  let navPosition =
+    currentPage === 'recent'
+      ? 'px-5 lg:px-24'
+      : 'xl:w-3/4 px-5 lg:px-24 xl:px-12';
   return (
     <div className={navPosition}>
       <menu className="flex justify-between float-right w-80 mb-8 md:mb-0">

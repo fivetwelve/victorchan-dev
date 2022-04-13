@@ -3,6 +3,7 @@ import SimpleReactLightbox from 'simple-react-lightbox';
 import Masthead from '../components/masthead';
 import Nav from '../components/nav';
 import Seo from '../components/seo';
+import Footer from '../components/footer';
 import { makeid } from '../utils/functions';
 
 import sea1 from '../images/sea-1.png';
@@ -87,14 +88,13 @@ const clients = [
 // markup
 const PastWorkPage = () => {
   return (
-    <>
+    <div className="--body2  font-serif">
       <Seo title="Past Work" />
-      <SimpleReactLightbox className="font-serif">
-        <main className="--body2 inline-block py-12 px-5 md:px-24 font-serif">
-          <Masthead />
-          <Nav currentPage="past" />
-
-          <div className="w-full mb-8">
+      <Masthead />
+      <Nav currentPage="past" />
+      <SimpleReactLightbox>
+        <main className="inline-block pt-8 px-5 lg:px-24">
+          <div id="main" className="w-full mb-8">
             <h1
               className="inline-flex px-4 py-2 rotate-2 -translate-x-3 text-3xl md:text-4xl bg-white"
               style={h1DropShadowStyle}
@@ -114,7 +114,7 @@ const PastWorkPage = () => {
                   <img src={sea1} alt="" className="my-0 mx-auto" />
                 </span>
               </div>
-              <div className="mt-3">
+              <div className="mt-3 mb-7">
                 <h2 className={headlineStyle}>Agencies</h2>
               </div>
               {/* <h3 className="underline text-xl">Client</h3> */}
@@ -157,7 +157,7 @@ const PastWorkPage = () => {
                   <img src={sea2} alt="" className="my-0 mx-auto" />
                 </span>
               </div>
-              <div className="mt-3">
+              <div className="mt-3 mb-7">
                 <h2 className={headlineStyle}>Clients & Brands</h2>
               </div>
               <h3 className="underline text-xl">Industries</h3>
@@ -198,7 +198,7 @@ const PastWorkPage = () => {
                 <img src={sea3} alt="" className="my-0 mx-auto" />
               </span>
             </div>
-            <div className="mt-3">
+            <div className="mt-3 mb-7">
               <h2 className={headlineStyle}>Gallery</h2>
             </div>
           </div>
@@ -206,7 +206,8 @@ const PastWorkPage = () => {
           {/* Gallery ends */}
         </main>
       </SimpleReactLightbox>
-    </>
+      <Footer />
+    </div>
   );
 };
 
