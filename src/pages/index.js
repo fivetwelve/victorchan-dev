@@ -224,7 +224,7 @@ const IndexPage = () => {
               <h3 className="underline text-xl">Tech Stack</h3>
               <dl className="mt-6" style={{ columns: '2 auto' }}>
                 {stackData.map((element, idx) => (
-                  <dd key={`stack-${idx}`} className="flex mb-1.5">
+                  <dt key={`stack-${idx}`} className="flex mb-1.5">
                     <span className="flex justify-center w-9">
                       <FontAwesomeIcon
                         icon={element.icon}
@@ -240,7 +240,7 @@ const IndexPage = () => {
                     >
                       {element.text}
                     </a>
-                  </dd>
+                  </dt>
                 ))}
               </dl>
             </div>
