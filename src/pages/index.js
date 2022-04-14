@@ -222,9 +222,9 @@ const IndexPage = () => {
                 accomplish so much on their own.
               </p>
               <h3 className="underline text-xl">Tech Stack</h3>
-              <dl className="mt-6" style={{ columns: '2 auto' }}>
+              <ul className="mt-6 pl-0" style={{ columns: '2 auto' }}>
                 {stackData.map((element, idx) => (
-                  <dt key={`stack-${idx}`} className="flex mb-1.5">
+                  <li key={`stack-${idx}`} className="flex mb-1.5">
                     <span className="flex justify-center w-9">
                       <FontAwesomeIcon
                         icon={element.icon}
@@ -240,9 +240,9 @@ const IndexPage = () => {
                     >
                       {element.text}
                     </a>
-                  </dt>
+                  </li>
                 ))}
-              </dl>
+              </ul>
             </div>
             {/* Approach ends */}
           </div>
