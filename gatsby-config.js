@@ -9,7 +9,7 @@ module.exports = {
       name: `Victor Chan`,
       summary: `who lives and works in Toronto, building things on the web for people`,
     },
-    description: `Developer, husband, cat-dad. Viewer of tv & movies; reader of books & comics. Doing my best to stay positive.`,
+    description: `Front-end web developer, predominantly React ecosystem but interested in other frameworks and libraries.`,
     siteUrl: `https://victorchan.dev`,
     social: {
       twitter: `fivetwelve`,
@@ -24,6 +24,7 @@ module.exports = {
     `gatsby-plugin-netlify`,
     'gatsby-plugin-sass',
     'gatsby-plugin-postcss',
+    `gatsby-plugin-preload-fonts`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {

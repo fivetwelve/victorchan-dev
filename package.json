@@ -13,7 +13,8 @@
     "start": "netlify dev",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "preload-fonts": "gatsby-preload-fonts"
   },
   "dependencies": {
     "@fontsource/zilla-slab": "^4.5.1",
@@ -29,6 +30,7 @@
     "gatsby": "^4.6.2",
     "gatsby-plugin-image": "^2.9.0",
     "gatsby-plugin-mdx": "^3.7.0",
+    "gatsby-plugin-preload-fonts": "^3.12.1",
     "gatsby-plugin-react-helmet": "^5.7.0",
     "gatsby-plugin-sass": "^5.9.0",
     "gatsby-plugin-sharp": "^4.7.0",
