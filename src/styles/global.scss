@@ -12,6 +12,10 @@ $primaryColor: #ffbb24;
 $secondaryColor: #fde68a;
 $tertiaryColor: rgba(104, 103, 103, 0.3);
 
+::selection {
+  background-color: $secondaryColor;
+}
+
 .d {
   fill: #e7d0ba;
 }

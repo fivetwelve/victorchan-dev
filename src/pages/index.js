@@ -154,15 +154,15 @@ const IndexPage = () => {
               <h3 className="underline text-xl">Challenges</h3>
               <p className={paragraphStyle}>
                 The website was originally built atop Textpattern&mdash;a
-                somewhat obsolete PHP-based CMS&mdash; and its version of PHP
-                had long been deprecated by their hosting provider. The site
-                design was not responsive and the content management and
-                multilingual support was not easily scalable. Attempts to
-                upgrade the CMS and PHP to current versions brought errors and
-                would have necessitated PHP expertise that was outside my
-                wheelhouse. The site was also hosted on a shared virtual server
-                which I suspected would have to be upgraded or migrated to
-                handle the additional traffic the client envisioned.
+                somewhat obsolete PHP-based CMS&mdash;and its version of PHP had
+                long been deprecated by their hosting provider. The site design
+                was not responsive and the content management and multilingual
+                support was not easily scalable. Attempts to upgrade the CMS and
+                PHP to current versions brought errors and would have
+                necessitated PHP expertise that was outside my wheelhouse. The
+                site was also hosted on a shared virtual server which I
+                suspected would have to be upgraded or migrated to handle the
+                additional traffic the client envisioned.
               </p>
               <h3 className="underline text-xl">Solution</h3>
               <p className={paragraphStyle}>
